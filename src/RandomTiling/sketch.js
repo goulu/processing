@@ -1,7 +1,7 @@
 /**
  * Random Tiling
  * By Philippe Guglielmetti, aka Dr. Goulu (2011)
- * https://openprocessing.org/sketch/40422
+ * https://openprocessing.org/@Goulu/40422
  * 
  * Inspired by Paul Bourke (http://paulbourke.net/texture_colour/randomtile/)
  * Ported to p5.js with modern features and full OpenProcessing compatibility.

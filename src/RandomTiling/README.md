@@ -4,7 +4,7 @@ Algorithme de pavage aléatoire non-recouvrant du plan par des formes géométri
 
 Par **Philippe Guglielmetti (Dr. Goulu)**, 2011.
 
-- [Sketch sur OpenProcessing #40422](https://openprocessing.org/sketch/40422)
+- [Sketch sur OpenProcessing #40422](https://openprocessing.org/@Goulu/40422)
 - Inspiré des travaux de [Paul Bourke sur le Random Tiling](http://paulbourke.net/texture_colour/randomtile/)
 
 ---

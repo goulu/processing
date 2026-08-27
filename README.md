@@ -1,7 +1,7 @@
 # Processing & p5.js Creative Coding
 
 [![GitHub Pages](https://img.shields.io/badge/Live_Demo-goulu.github.io%2Fprocessing-38bdf8?style=for-the-badge&logo=github&logoColor=white)](https://goulu.github.io/processing/)
-[![OpenProcessing](https://img.shields.io/badge/OpenProcessing-Dr._Goulu-ed225d?style=for-the-badge&logo=processingfoundation&logoColor=white)](https://openprocessing.org/user/40422)
+[![OpenProcessing](https://img.shields.io/badge/OpenProcessing-@Goulu-ed225d?style=for-the-badge&logo=processingfoundation&logoColor=white)](https://openprocessing.org/@Goulu)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 > 🌐 **Démonstration en ligne (Hub interactif)** : **[https://goulu.github.io/processing/](https://goulu.github.io/processing/)**
