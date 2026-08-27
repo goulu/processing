@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Busy Beaver (Castor Affairé) - Machine de Turing - p5.js</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+  </head>
+  <body>
+    <div class="controls-overlay">
+      <div class="title-bar">
+        <h1>Castor Affairé (BB)</h1>
+        <a href="../../" class="back-link">← Hub</a>
+      </div>
+      <p class="author-note">Dr. Goulu • Machine de Turing & Théorie du Calcul</p>
+
+      <div class="control-grid">
+        <label>
+          <span>Machine / Champion</span>
+          <select id="machine-select">
+            <option value="4" selected>BB(4) : 4 États (107 pas, 13 uns)</option>
+            <option value="2">BB(2) : 2 États (6 pas, 4 uns)</option>
+            <option value="3">BB(3) : 3 États (21 pas, 6 uns)</option>
+            <option value="5">BB(5) : 5 États (47M pas, 4098 uns)</option>
+            <option value="turmite">Turmite 2D (Spirale / Autoroute)</option>
+          </select>
+        </label>
+        <label>
+          <span>Vitesse (<span id="speed-val">10</span> pas / frame)</span>
+          <input type="range" id="speed-slider" min="1" max="500" step="5" value="10" />
+        </label>
+        <label>
+          <span>Mode d'affichage</span>
+          <select id="view-select">
+            <option value="spacetime">Diagramme Espace-Temps (Ruban défilant)</option>
+            <option value="tape">Ruban 1D & Tête de lecture zoomée</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="button-group">
+        <button id="pause-btn" class="action-btn">⏸ Pause</button>
+        <button id="step-btn">⏭ Pas à pas</button>
+        <button id="reset-btn">🔄 Réinitialiser</button>
+      </div>
+    </div>
+
+    <div id="info-hud" class="info-hud">
+      <div>État courant : <span id="hud-state" class="val">A</span></div>
+      <div>Pas exécutés ($S$) : <span id="hud-steps" class="val">0</span></div>
+      <div>Uns écrits ($\Sigma$) : <span id="hud-ones" class="val">0</span></div>
+      <div>Statut : <span id="hud-status" class="val">EN COURS</span></div>
+    </div>
+
+    <main id="sketch-container"></main>
+    <script src="sketch.js"></script>
+  </body>
+</html>

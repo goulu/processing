@@ -11,7 +11,8 @@ export default defineConfig({
         randomTiling: './src/RandomTiling/index.html',
         sitemap: './src/Sitemap/index.html',
         tspart: './src/TSPart/index.html',
-        cubeFractal: './src/CubeFractal/index.html'
+        cubeFractal: './src/CubeFractal/index.html',
+        busyBeaver: './src/BusyBeaver/index.html'
       }
     }
   }
