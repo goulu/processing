@@ -22,7 +22,7 @@ function setup() {
 
   x = new Int32Array(tspLines.length - 7);
   y = new Int32Array(tspLines.length - 7);
-  let center = 0;
+  let centerIndex = 0;
   let i = 0;
   for (let l = 6; l < tspLines.length; l++) {
     let pieces = tspLines[l].trim().split(/\s+/);
@@ -30,7 +30,7 @@ function setup() {
       x[i] = parseInt(pieces[1], 10);
       y[i] = parseInt(pieces[2], 10);
       if (Math.abs(x[i] - 10000) < 50 && Math.abs(y[i] - 10000) < 50) {
-        center = i;
+        centerIndex = i;
       }
       i += 1;
     }
@@ -43,7 +43,7 @@ function setup() {
     let lineStr = tourLines[l].trim();
     if (!lineStr || lineStr === 'EOF' || lineStr === '-1') break;
     j[i] = parseInt(lineStr, 10) - 1;
-    if (j[i] === center) {
+    if (j[i] === centerIndex) {
       index = i;
     }
     i += 1;
