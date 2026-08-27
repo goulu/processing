@@ -9,7 +9,8 @@ export default defineConfig({
         galaxy: './src/Galaxy/index.html',
         nbody: './src/NBody/index.html',
         randomTiling: './src/RandomTiling/index.html',
-        sitemap: './src/Sitemap/index.html'
+        sitemap: './src/Sitemap/index.html',
+        tspart: './src/TSPart/index.html'
       }
     }
   }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSP Art - Traveling Salesman Problem Drawing - p5.js</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+  </head>
+  <body>
+    <div class="controls-overlay">
+      <div class="title-bar">
+        <h1>TSP Art</h1>
+        <a href="../../" class="back-link">← Hub</a>
+      </div>
+      <p class="author-note">Dr. Goulu • Mona Lisa 100K TSP Tour</p>
+
+      <div class="control-grid">
+        <label>
+          <span>Modèle</span>
+          <select id="preset-select">
+            <option value="monalisa">Mona Lisa (Portrait TSP)</option>
+            <option value="spiral">Spirale de Fermat continue</option>
+            <option value="hilbert">Courbe de Hilbert / Remplissage d'espace</option>
+          </select>
+        </label>
+        <label>
+          <span>Segments par frame (<span id="speed-val">250</span>)</span>
+          <input type="range" id="speed-slider" min="10" max="1500" step="20" value="250" />
+        </label>
+        <label>
+          <span>Style de rendu</span>
+          <select id="style-select">
+            <option value="ink">Encre noire sur papier blanc</option>
+            <option value="sepia">Sépia vintage</option>
+            <option value="cyan">Luminescence cyan sur fond noir</option>
+            <option value="gold">Tracé or cosmique</option>
+          </select>
+        </label>
+        <label>
+          <span>Charger fichiers TSP / Tour (.tsp, .tour)</span>
+          <label class="file-input-btn">
+            📁 Choisir des fichiers
+            <input type="file" id="file-input" multiple accept=".tsp,.tour,.txt" style="display: none;" />
+          </label>
+        </label>
+      </div>
+
+      <div class="button-group">
+        <button id="pause-btn" class="action-btn">⏸ Pause</button>
+        <button id="reset-btn">🔄 Recommencer</button>
+      </div>
+    </div>
+
+    <div id="info-hud" class="info-hud">
+      <div id="progress-val">Progression : 0%</div>
+      <div id="nodes-count">Points du tour : 0</div>
+    </div>
+
+    <main id="sketch-container"></main>
+    <script src="sketch.js"></script>
+  </body>
+</html>

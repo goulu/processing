@@ -22,6 +22,7 @@ Tous les sketches sont organisés dans le dossier **[`src/`](file:///home/goulu/
 | **[`src/NBody/`](file:///home/goulu/Documents/develop/processing/src/NBody)** | **[▶ Lancer N-Body](https://goulu.github.io/processing/src/NBody/)** | `NBody.pde` | Dynamique gravitationnelle du Système Solaire (`system.xml`) et orbites. |
 | **[`src/RandomTiling/`](file:///home/goulu/Documents/develop/processing/src/RandomTiling)** | **[▶ Lancer Random Tiling](https://goulu.github.io/processing/src/RandomTiling/)** | `RandomTiling.pde` | Pavage planaire aléatoire distribué selon Riemann-Zeta. |
 | **[`src/Sitemap/`](file:///home/goulu/Documents/develop/processing/src/Sitemap)** | **[▶ Lancer Sitemap](https://goulu.github.io/processing/src/Sitemap/)** | `sitemap.pde` | Graphe orienté par forces physiques (ressorts et répulsion). |
+| **[`src/TSPart/`](file:///home/goulu/Documents/develop/processing/src/TSPart)** | **[▶ Lancer TSP Art](https://goulu.github.io/processing/src/TSPart/)** | `tspart.pde` | Dessin continu d'une seule ligne basé sur le voyageur de commerce (Mona Lisa). |
 
 ---
 
