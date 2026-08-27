@@ -10,7 +10,8 @@ export default defineConfig({
         nbody: './src/NBody/index.html',
         randomTiling: './src/RandomTiling/index.html',
         sitemap: './src/Sitemap/index.html',
-        tspart: './src/TSPart/index.html'
+        tspart: './src/TSPart/index.html',
+        cubeFractal: './src/CubeFractal/index.html'
       }
     }
   }

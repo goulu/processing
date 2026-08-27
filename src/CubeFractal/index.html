@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Cube Fractal - p5.js</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+  </head>
+  <body>
+    <div class="controls-overlay">
+      <div class="title-bar">
+        <h1>Cube Fractal 3D</h1>
+        <a href="../../" class="back-link">← Hub</a>
+      </div>
+      <p class="author-note">Dr. Goulu • Rendu Fractal Récursif 3D</p>
+
+      <div class="control-grid">
+        <label>
+          <span>Profondeur de récursion (<span id="depth-val">4</span>)</span>
+          <input type="range" id="depth-slider" min="1" max="5" step="1" value="4" />
+        </label>
+        <label>
+          <span>Facteur d'échelle (<span id="factor-val">0.42</span>)</span>
+          <input type="range" id="factor-slider" min="0.25" max="0.5" step="0.01" value="0.42" />
+        </label>
+        <label>
+          <span>Palette de matériaux</span>
+          <select id="palette-select">
+            <option value="crystal">Cristal Améthyste (Original)</option>
+            <option value="emerald">Émeraude & Jade</option>
+            <option value="gold">Or Impérial</option>
+            <option value="cyan">Glace & Néon Cyan</option>
+            <option value="ruby">Rubis Magmatique</option>
+          </select>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="auto-rotate" checked />
+          <span>Rotation automatique</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="draw-edges" checked />
+          <span>Afficher les arêtes brillantes</span>
+        </label>
+      </div>
+
+      <div class="button-group">
+        <button id="reset-cam-btn" class="action-btn">🔄 Réinitialiser Caméra</button>
+      </div>
+
+      <div class="hint-keys">
+        <span>Contrôles 3D : <b>Clic & Glisser</b> Orbiter • <b>Clic Droit</b> Pan • <b>Molette</b> Zoom</span>
+      </div>
+    </div>
+
+    <main id="sketch-container"></main>
+    <script src="sketch.js"></script>
+  </body>
+</html>
