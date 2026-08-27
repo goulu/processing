@@ -5,7 +5,10 @@
 
 function setup() {
   const canvas = createCanvas(windowWidth, windowHeight);
-  canvas.parent('sketch-container');
+  const container = document.getElementById('sketch-container');
+  if (container) {
+    canvas.parent(container);
+  }
   background(18, 18, 24);
 }
 

@@ -167,7 +167,10 @@ function loadPreset(name) {
 
 function setup() {
   const canvas = createCanvas(windowWidth, windowHeight);
-  canvas.parent('sketch-container');
+  const container = document.getElementById('sketch-container');
+  if (container) {
+    canvas.parent(container);
+  }
   loadPreset('drgoulu');
   setupUI();
   setupInteractions();

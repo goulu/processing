@@ -1,11 +1,22 @@
 /**
  * Random Tiling
- * Ported to p5.js from Processing sketch by Philippe Guglielmetti (Dr. Goulu)
- * Inspired by http://paulbourke.net/texture_colour/randomtile/
+ * By Philippe Guglielmetti, aka Dr. Goulu (2011)
+ * https://openprocessing.org/sketch/40422
+ * 
+ * Inspired by Paul Bourke (http://paulbourke.net/texture_colour/randomtile/)
+ * Ported to p5.js with modern features and full OpenProcessing compatibility.
  */
 
-let c = 1.1;
-let n = 0; // 0=circle, 10=star, 3=triangle, 4=square, 5=pentagon, 6=hexagon
+// Shape type constants
+const SHAPE_CIRCLE = 0;
+const SHAPE_STAR = 10; // 5-pointed regular star (10 alternating vertices)
+const SHAPE_TRIANGLE = 3;
+const SHAPE_SQUARE = 4;
+const SHAPE_PENTAGON = 5;
+const SHAPE_HEXAGON = 6;
+
+let c = 1.1; // Power-law exponent
+let n = SHAPE_CIRCLE; // Active shape type
 let polys = [];
 let maxArea = 0;
 let currentIndex = 1;
@@ -55,20 +66,22 @@ function lineIntersect(x1, y1, x2, y2, x3, y3, x4, y4) {
 
 class Poly {
   constructor(pts, area) {
-    this.pts = pts;
+    this.pts = pts; // 0 for circle, 10 for star, 3..n for regular polygon
     this.area = area;
     this.cx = 0;
     this.cy = 0;
     this.phi = 0;
 
     if (pts < 3) {
+      // Circle
       this.cr = Math.sqrt(area / Math.PI);
     } else if (pts === 10) {
-      // pentagram star
+      // Pentagram (5-pointed star)
       let t = 2 * Math.sin(Math.PI / 5);
       t = (5 * t * t / 4) * (Math.tan((3 * Math.PI) / 10) - Math.tan(Math.PI / 5));
       this.cr = Math.sqrt(area / t);
     } else {
+      // Regular n-gon
       this.cr = Math.sqrt((2 * area) / (pts * Math.sin((2 * Math.PI) / pts)));
     }
   }
@@ -82,7 +95,7 @@ class Poly {
   x(i) {
     let r = this.cr;
     if (this.pts === 10 && i % 2 === 1) {
-      r /= 2.5;
+      r /= 2.5; // Inner radius for 5-pointed star
     }
     return this.cx + r * Math.cos(this.phi + (i * 2 * Math.PI) / this.pts);
   }
@@ -128,13 +141,13 @@ class Poly {
     const d = Math.sqrt((p.cx - this.cx) ** 2 + (p.cy - this.cy) ** 2);
     if (d > p.cr + this.cr) return false;
 
-    // Check if points of p are in this
+    // Check if points of p are inside this shape
     for (let i = 0; i < p.pts; i++) {
       if (this.contains(p.x(i), p.y(i))) return true;
     }
     if (this.pts < 3) return true;
 
-    // Check if points of this are in p
+    // Check if points of this shape are inside p
     for (let i = 0; i < this.pts; i++) {
       if (p.contains(this.x(i), this.y(i))) return true;
     }
@@ -182,7 +195,12 @@ function resetSketch() {
 
 function setup() {
   const canvas = createCanvas(windowWidth, windowHeight);
-  canvas.parent('sketch-container');
+  // Safely attach to parent element only if it exists (for local HTML and OpenProcessing)
+  const container = document.getElementById('sketch-container');
+  if (container) {
+    canvas.parent(container);
+  }
+
   noStroke();
   resetSketch();
 }
@@ -215,19 +233,19 @@ function draw() {
 
     currentIndex++;
     if (!placed && currentIndex > 1000) {
-      // Don't waste too much time if density is high
+      // Don't waste too much time if density is very high
       break;
     }
   }
 }
 
 function keyPressed() {
-  if (key === '0') { n = 0; resetSketch(); }       // Circle
-  else if (key === '1') { n = 10; resetSketch(); }  // Star
-  else if (key === '3') { n = 3; resetSketch(); }   // Triangle
-  else if (key === '4') { n = 4; resetSketch(); }   // Square
-  else if (key === '5') { n = 5; resetSketch(); }   // Pentagon
-  else if (key === '6') { n = 6; resetSketch(); }   // Hexagon
+  if (key === '0') { n = SHAPE_CIRCLE; resetSketch(); }
+  else if (key === '1') { n = SHAPE_STAR; resetSketch(); }
+  else if (key === '3') { n = SHAPE_TRIANGLE; resetSketch(); }
+  else if (key === '4') { n = SHAPE_SQUARE; resetSketch(); }
+  else if (key === '5') { n = SHAPE_PENTAGON; resetSketch(); }
+  else if (key === '6') { n = SHAPE_HEXAGON; resetSketch(); }
   else if (key === ' ') { isPaused = !isPaused; }
   else if (key === 'r' || key === 'R') { resetSketch(); }
 }
