@@ -1,0 +1,25 @@
+{
+  "name": "processing-sketches",
+  "version": "1.0.0",
+  "description": "Collection of creative coding sketches in Processing (Java) and p5.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "new:p5": "node scripts/new-p5-sketch.js"
+  },
+  "keywords": [
+    "processing",
+    "p5js",
+    "creative-coding",
+    "generative-art",
+    "sketches"
+  ],
+  "author": "Philippe Guglielmetti <develop@goulu.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "p5": "^1.11.3",
+    "vite": "^6.2.0"
+  }
+}

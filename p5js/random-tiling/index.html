@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Tiling - p5.js</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+  </head>
+  <body>
+    <div class="controls-overlay">
+      <div class="title-bar">
+        <h1>Random Tiling</h1>
+        <a href="/" class="back-link">← Hub</a>
+      </div>
+      <div class="button-group">
+        <button onclick="n=0; resetSketch();" title="Raccourci: 0">● Cercles</button>
+        <button onclick="n=10; resetSketch();" title="Raccourci: 1">★ Étoiles</button>
+        <button onclick="n=3; resetSketch();" title="Raccourci: 3">▲ Triangles</button>
+        <button onclick="n=4; resetSketch();" title="Raccourci: 4">■ Carrés</button>
+        <button onclick="n=5; resetSketch();" title="Raccourci: 5">⬟ Pentagones</button>
+        <button onclick="n=6; resetSketch();" title="Raccourci: 6">⬡ Hexagones</button>
+        <button class="action-btn" onclick="isPaused = !isPaused; this.textContent = isPaused ? '▶ Reprendre' : '⏸ Pause';">⏸ Pause</button>
+        <button class="action-btn" onclick="resetSketch();">🔄 Recommencer (R)</button>
+      </div>
+    </div>
+    <main id="sketch-container"></main>
+    <script src="sketch.js"></script>
+  </body>
+</html>

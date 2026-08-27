@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Processing & p5.js Sketches - Dr. Goulu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #090d16;
+        --surface: #111726;
+        --surface-hover: #182239;
+        --border: rgba(255, 255, 255, 0.08);
+        --border-hover: rgba(255, 255, 255, 0.2);
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --accent: #38bdf8;
+        --accent-glow: rgba(56, 189, 248, 0.15);
+        --p5-color: #ed225d;
+        --processing-color: #006699;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        min-height: 100vh;
+        padding: 2.5rem 1.5rem;
+        background-image: 
+          radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, rgba(237, 34, 93, 0.06) 0px, transparent 50%);
+        background-attachment: fixed;
+      }
+
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      header {
+        margin-bottom: 3.5rem;
+        text-align: center;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.35rem 0.85rem;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-bottom: 1.25rem;
+      }
+
+      .badge span.dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #10b981;
+        box-shadow: 0 0 10px #10b981;
+      }
+
+      h1 {
+        font-size: 2.75rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin-bottom: 0.75rem;
+        background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .subtitle {
+        color: var(--text-muted);
+        font-size: 1.15rem;
+        max-width: 620px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.35rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .tag {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        padding: 0.2rem 0.6rem;
+        border-radius: 4px;
+      }
+
+      .tag.p5 {
+        background: rgba(237, 34, 93, 0.15);
+        color: #ff608b;
+        border: 1px solid rgba(237, 34, 93, 0.3);
+      }
+
+      .tag.processing {
+        background: rgba(0, 102, 153, 0.25);
+        color: #38bdf8;
+        border: 1px solid rgba(0, 102, 153, 0.4);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3.5rem;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.5rem;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        border-color: var(--border-hover);
+        background: var(--surface-hover);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.85rem;
+      }
+
+      .card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #ffffff;
+      }
+
+      .card-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #090d16;
+      }
+
+      .btn-primary:hover {
+        background: #7dd3fc;
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text-muted);
+        border: 1px solid var(--border);
+      }
+
+      .btn-secondary:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .cli-box {
+        background: #060911;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.88rem;
+        color: #a5b4fc;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .code-snippet {
+        color: #38bdf8;
+      }
+
+      footer {
+        text-align: center;
+        padding-top: 2rem;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        border-top: 1px solid var(--border);
+      }
+
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="badge">
+          <span class="dot"></span>
+          Creative Coding Workspace
+        </div>
+        <h1>Processing & p5.js Sketches</h1>
+        <p class="subtitle">
+          Collection de projets génératifs, simulations physiques et algorithmes visuels par Philippe Guglielmetti (Dr. Goulu).
+        </p>
+      </header>
+
+      <!-- Section p5.js -->
+      <section>
+        <div class="section-title">
+          <span class="tag p5">p5.js</span>
+          <span>Web Interactive Sketches</span>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div>
+              <div class="card-header">
+                <h3 class="card-title">Random Tiling</h3>
+                <span class="tag p5">p5.js</span>
+              </div>
+              <p class="card-desc">
+                Pavage aléatoire non-recouvrant basé sur la distribution de Riemann-Zeta avec support interactif pour cercles, étoiles, triangles, carrés, pentagones et hexagones.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Interactif</span>
+              <a href="/p5js/random-tiling/" class="btn btn-primary">Lancer le sketch →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Processing Java -->
+      <section>
+        <div class="section-title">
+          <span class="tag processing">Processing</span>
+          <span>Java Sketches (.pde)</span>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div>
+              <div class="card-header">
+                <h3 class="card-title">Galaxy</h3>
+                <span class="tag processing">Java</span>
+              </div>
+              <p class="card-desc">
+                Simulation et rendu réaliste de galaxie spirale avec rotation stellaire, poussières et flares lumineux.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Galaxy/Galaxy.pde</span>
+              <span class="btn btn-secondary">Processing IDE</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="card-header">
+                <h3 class="card-title">N-Body</h3>
+                <span class="tag processing">Java</span>
+              </div>
+              <p class="card-desc">
+                Simulateur de dynamique gravitationnelle à N-corps avec chargement de configuration de système en XML.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">NBody/NBody.pde</span>
+              <span class="btn btn-secondary">Processing IDE</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="card-header">
+                <h3 class="card-title">Random Tiling</h3>
+                <span class="tag processing">Java</span>
+              </div>
+              <p class="card-desc">
+                Version originale Processing Java de l'algorithme de pavage aléatoire géométrique.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">random tiling/RandomTiling.pde</span>
+              <span class="btn btn-secondary">Processing IDE</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="card-header">
+                <h3 class="card-title">Sitemap</h3>
+                <span class="tag processing">Java</span>
+              </div>
+              <p class="card-desc">
+                Visualisation arborescente et cartographie de sitemap web.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">sitemap/sitemap.pde</span>
+              <span class="btn btn-secondary">Processing IDE</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Commands -->
+      <section style="margin-bottom: 3.5rem;">
+        <div class="section-title">
+          <span>⚡ Commandes rapides</span>
+        </div>
+        <div class="cli-box">
+          <span>Créer un nouveau sketch p5.js :</span>
+          <span class="code-snippet">npm run new:p5 &lt;nom-du-sketch&gt;</span>
+        </div>
+        <div class="cli-box">
+          <span>Lancer le serveur de développement web :</span>
+          <span class="code-snippet">npm run dev</span>
+        </div>
+      </section>
+
+      <footer>
+        <p>Projet open source disponible sur <a href="https://github.com/goulu/processing" target="_blank" rel="noreferrer">GitHub (goulu/processing)</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

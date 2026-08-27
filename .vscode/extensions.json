@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "ptrgags.processing-language",
+    "samplavigne.p5-snippets",
+    "ritwickdey.liveserver",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ]
+}

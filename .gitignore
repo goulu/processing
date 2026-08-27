@@ -1,0 +1,42 @@
+# Processing (Java) output and build directories
+applet/
+application.windows32/
+application.windows64/
+application.linux32/
+application.linux64/
+application.macosx/
+*.class
+bin/
+out/
+build/
+
+# Node.js & Web
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs and Editors
+.idea/
+*.sublime-workspace
+*.sublime-project
+.project
+.classpath
+.settings/
