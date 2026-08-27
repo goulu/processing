@@ -10,10 +10,10 @@ Tous les sketches sont regroupés dans le dossier **[`src/`](file:///home/goulu/
 
 | Projet | Processing (Java) | p5.js (Web) | Description |
 | :--- | :---: | :---: | :--- |
-| **[`src/galaxy/`](file:///home/goulu/Documents/develop/processing/src/galaxy)** | `Galaxy.pde` | `sketch.js` | Simulation de galaxie spirale à rotation différentielle et torsion. |
-| **[`src/nbody/`](file:///home/goulu/Documents/develop/processing/src/nbody)** | `NBody.pde` | `sketch.js` | Dynamique gravitationnelle du Système Solaire (`system.xml`) et orbites. |
-| **[`src/random-tiling/`](file:///home/goulu/Documents/develop/processing/src/random-tiling)** | `RandomTiling.pde` | `sketch.js` | Pavage planaire aléatoire distribué selon Riemann-Zeta. |
-| **[`src/sitemap/`](file:///home/goulu/Documents/develop/processing/src/sitemap)** | `sitemap.pde` | `sketch.js` | Graphe orienté par forces physiques (ressorts et répulsion). |
+| **[`src/Galaxy/`](file:///home/goulu/Documents/develop/processing/src/Galaxy)** | `Galaxy.pde` | `sketch.js` | Simulation de galaxie spirale à rotation différentielle et torsion. |
+| **[`src/NBody/`](file:///home/goulu/Documents/develop/processing/src/NBody)** | `NBody.pde` | `sketch.js` | Dynamique gravitationnelle du Système Solaire (`system.xml`) et orbites. |
+| **[`src/RandomTiling/`](file:///home/goulu/Documents/develop/processing/src/RandomTiling)** | `RandomTiling.pde` | `sketch.js` | Pavage planaire aléatoire distribué selon Riemann-Zeta. |
+| **[`src/Sitemap/`](file:///home/goulu/Documents/develop/processing/src/Sitemap)** | `sitemap.pde` | `sketch.js` | Graphe orienté par forces physiques (ressorts et répulsion). |
 
 ---
 
@@ -31,15 +31,15 @@ npm install
 npm run dev
 
 # Créer un nouveau projet p5.js autonome dans src/
-npm run new:p5 mon-nouveau-sketch
+npm run new:p5 MonNouveauSketch
 ```
 
-Accédez au Hub à l'adresse [`http://localhost:5173/`](http://localhost:5173/) ou directement à un sketch (ex : [`http://localhost:5173/src/galaxy/`](http://localhost:5173/src/galaxy/)).
+Accédez au Hub à l'adresse [`http://localhost:5173/`](http://localhost:5173/) ou directement à un sketch (ex : [`http://localhost:5173/src/Galaxy/`](http://localhost:5173/src/Galaxy/)).
 
 ### 2. Version Processing (Java)
 
 1. Téléchargez l'IDE [Processing](https://processing.org/download).
-2. Ouvrez le fichier `.pde` correspondant (ex: `src/galaxy/Galaxy.pde`, `src/nbody/NBody.pde`, etc.).
+2. Ouvrez le fichier `.pde` correspondant (ex: `src/Galaxy/Galaxy.pde`, `src/NBody/NBody.pde`, etc.).
 3. Exécutez avec `Ctrl+R` / `Cmd+R`.
 
 ---

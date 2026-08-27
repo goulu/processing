@@ -10,14 +10,18 @@ const rootDir = path.resolve(__dirname, '..');
 const sketchName = process.argv[2];
 
 if (!sketchName) {
-  console.error('Usage: npm run new:p5 <sketch-name>');
-  console.error('Example: npm run new:p5 flow-field');
+  console.error('Usage: npm run new:p5 <SketchName>');
+  console.error('Example: npm run new:p5 FlowField');
   process.exit(1);
 }
 
-// Format folder and title
-const folderName = sketchName.toLowerCase().replace(/[^a-z0-9_-]/g, '-');
+// Format folder (PascalCase or preserve case) and readable title
+const folderName = sketchName
+  .replace(/[-_ ]+(\w)/g, (_, c) => c.toUpperCase())
+  .replace(/^[a-z]/, (c) => c.toUpperCase());
+
 const sketchTitle = sketchName
+  .replace(/([a-z])([A-Z])/g, '$1 $2')
   .replace(/[-_]/g, ' ')
   .replace(/\b\w/g, (c) => c.toUpperCase());
 
@@ -44,7 +48,7 @@ for (const file of filesToCopy) {
 // Create dedicated README.md for the new sketch
 const readmeContent = `# ${sketchTitle}
 
-Creative coding sketch created with **p5.js**.
+Creative coding sketch created with **p5.js** and **Processing**.
 
 ---
 
