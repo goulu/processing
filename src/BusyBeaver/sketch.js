@@ -9,10 +9,10 @@ let headPos = Math.floor(TAPE_SIZE / 2);
 let state = 'A';
 let steps = 0;
 let onesCount = 0;
-let currentBB = '4';
+let currentBB = 'turmite';
 let isHalted = false;
 let isPaused = false;
-let stepsPerFrame = 10;
+let stepsPerFrame = 1;
 let viewMode = 'spacetime';
 
 // 2D Turmite support
