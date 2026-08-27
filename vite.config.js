@@ -12,7 +12,8 @@ export default defineConfig({
         sitemap: './src/Sitemap/index.html',
         tspart: './src/TSPart/index.html',
         cubeFractal: './src/CubeFractal/index.html',
-        busyBeaver: './src/BusyBeaver/index.html'
+        busyBeaver: './src/BusyBeaver/index.html',
+        oldScope: './src/OldScope/index.html'
       }
     }
   }

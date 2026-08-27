@@ -25,6 +25,7 @@ Tous les sketches sont organisés dans le dossier **[`src/`](file:///home/goulu/
 | **[`src/TSPart/`](file:///home/goulu/Documents/develop/processing/src/TSPart)** | **[▶ Lancer TSP Art](https://goulu.github.io/processing/src/TSPart/)** | `tspart.pde` | Dessin continu d'une seule ligne basé sur le voyageur de commerce (Mona Lisa). |
 | **[`src/CubeFractal/`](file:///home/goulu/Documents/develop/processing/src/CubeFractal)** | **[▶ Lancer Cube Fractal](https://goulu.github.io/processing/src/CubeFractal/)** | `cubefractal.pde` | Fractale 3D récursive de cubes de cristal avec navigation orbitale. |
 | **[`src/BusyBeaver/`](file:///home/goulu/Documents/develop/processing/src/BusyBeaver)** | **[▶ Lancer Busy Beaver](https://goulu.github.io/processing/src/BusyBeaver/)** | `castor.pde` | Champions du Castor Affairé (Machine de Turing 1D et Turmite 2D). |
+| **[`src/OldScope/`](file:///home/goulu/Documents/develop/processing/src/OldScope)** | **[▶ Lancer OldScope](https://goulu.github.io/processing/src/OldScope/)** | `scope.pde` | Oscilloscope cathodique vintage, figures de Lissajous et phosphore rémanent. |
 
 ---
 

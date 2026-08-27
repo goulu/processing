@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OldScope - Vintage CRT Oscilloscope - p5.js</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+  </head>
+  <body>
+    <div class="controls-overlay">
+      <div class="title-bar">
+        <h1>OldScope</h1>
+        <a href="../../" class="back-link">← Hub</a>
+      </div>
+      <p class="author-note">Dr. Goulu • Oscilloscope Cathodique Vintage</p>
+
+      <div class="control-grid">
+        <label>
+          <span>Mode de signal</span>
+          <select id="mode-select">
+            <option value="lissajous" selected>Mode X-Y : Figures de Lissajous</option>
+            <option value="yt">Mode Y-T : Balayage Sinusoïdal</option>
+            <option value="modulation">Modulation AM / Battements</option>
+            <option value="harmonics">Superposition Harmonique Fourier</option>
+          </select>
+        </label>
+        <label>
+          <span>Fréquence X (Fx = <span id="fx-val">3.0</span>)</span>
+          <input type="range" id="fx-slider" min="1" max="12" step="0.5" value="3.0" />
+        </label>
+        <label>
+          <span>Fréquence Y (Fy = <span id="fy-val">2.0</span>)</span>
+          <input type="range" id="fy-slider" min="1" max="12" step="0.5" value="2.0" />
+        </label>
+        <label>
+          <span>Vitesse de déphasage</span>
+          <input type="range" id="phase-slider" min="0" max="0.08" step="0.005" value="0.02" />
+        </label>
+        <label>
+          <span>Type de phosphore</span>
+          <select id="color-select">
+            <option value="green" selected>Phosphore Vert P1 (Classique CRT)</option>
+            <option value="amber">Phosphore Ambre P3</option>
+            <option value="cyan">Phosphore Bleu/Cyan P7</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="button-group">
+        <button id="pause-btn" class="action-btn">⏸ Pause</button>
+        <button id="reset-btn">🔄 Réinitialiser</button>
+      </div>
+
+      <div class="hint-keys">
+        <span>Raccourcis : <b>1/2</b> Freq X • <b>3/4</b> Freq Y • <b>Espace</b> Pause</span>
+      </div>
+    </div>
+
+    <main id="sketch-container"></main>
+    <script src="sketch.js"></script>
+  </body>
+</html>
