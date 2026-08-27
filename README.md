@@ -2,6 +2,8 @@
 
 Ce dépôt regroupe des sketches d'art génératif, de simulations physiques et d'algorithmes visuels développés en **[Processing](https://processing.org/) (Java)** et en **[p5.js](https://p5js.org/) (JavaScript)**.
 
+Chaque script dispose de son propre dossier regroupant son code source Processing, son implémentation p5.js (le cas échéant) et sa documentation dédiée.
+
 ---
 
 ## 📁 Structure du projet
@@ -9,20 +11,25 @@ Ce dépôt regroupe des sketches d'art génératif, de simulations physiques et 
 ```text
 ├── Galaxy/                   # Processing (Java) : Simulation de galaxie spirale
 │   ├── Galaxy.pde
-│   └── flares.jpg
+│   ├── flares.jpg
+│   └── README.md
 ├── NBody/                    # Processing (Java) : Dynamique gravitationnelle N-corps
 │   ├── NBody.pde
-│   └── system.xml
-├── random tiling/            # Processing (Java) : Pavage aléatoire géométrique
-│   └── RandomTiling.pde
+│   ├── system.xml
+│   └── README.md
+├── random-tiling/            # Processing + p5.js : Pavage aléatoire géométrique
+│   ├── RandomTiling.pde      # Code Processing Java
+│   ├── index.html            # Interface web p5.js
+│   ├── sketch.js             # Code p5.js
+│   ├── style.css             # Styles du sketch
+│   └── README.md             # Documentation et principes mathématiques
 ├── sitemap/                  # Processing (Java) : Visualisation cartographique de sitemap
-│   └── sitemap.pde
-├── p5js/                     # Sketches web p5.js
-│   └── random-tiling/        # Portage web interactif de Random Tiling
+│   ├── sitemap.pde
+│   └── README.md
 ├── templates/
 │   └── p5-sketch/            # Modèle prêt à l'emploi pour nouveau sketch p5.js
 ├── scripts/
-│   └── new-p5-sketch.js      # Générateur CLI pour nouveau sketch p5.js
+│   └── new-p5-sketch.js      # Générateur CLI pour nouveau projet p5.js
 ├── index.html                # Galerie / hub web de prévisualisation
 └── package.json              # Outillage Node.js / Vite / p5
 ```
@@ -42,30 +49,15 @@ npm install
 # Lancer le serveur de développement (Hub & sketches)
 npm run dev
 
-# Créer un nouveau sketch p5.js à partir du template
+# Créer un nouveau projet p5.js autonome avec son README
 npm run new:p5 mon-nouveau-sketch
 ```
-
-Le script `npm run new:p5 <nom>` génère automatiquement un nouveau dossier dans `p5js/<nom>` avec `index.html`, `sketch.js`, et `style.css`.
 
 ### 2. Exécution des sketches Processing (Java)
 
 1. Téléchargez et installez l'IDE [Processing](https://processing.org/download).
-2. Ouvrez le fichier `.pde` correspondant dans l'IDE (ex: `Galaxy/Galaxy.pde`).
+2. Ouvrez le fichier `.pde` correspondant dans l'IDE (ex: `Galaxy/Galaxy.pde`, `random-tiling/RandomTiling.pde`).
 3. Cliquez sur **Exécuter** (`Ctrl+R` ou `Cmd+R`).
-
----
-
-## 🎨 Sketches disponibles
-
-### Sketches Processing (Java)
-- **Galaxy** : Rendu et dynamique spirale avec étoiles, poussières et flares lumineux.
-- **NBody** : Simulation orbitale à N corps configurée par fichier XML.
-- **Random Tiling** : Pavage planaire aléatoire non recouvrant distribué selon Riemann-Zeta.
-- **Sitemap** : Arbre et cartographie de sites web.
-
-### Sketches p5.js (Web)
-- **Random Tiling** : Version interactive avec panneau de contrôle (cercles, étoiles, polygones, pause/reprise, redimensionnement dynamique).
 
 ---
 

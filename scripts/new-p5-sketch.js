@@ -21,7 +21,7 @@ const sketchTitle = sketchName
   .replace(/[-_]/g, ' ')
   .replace(/\b\w/g, (c) => c.toUpperCase());
 
-const targetDir = path.join(rootDir, 'p5js', folderName);
+const targetDir = path.join(rootDir, folderName);
 const templateDir = path.join(rootDir, 'templates', 'p5-sketch');
 
 if (fs.existsSync(targetDir)) {
@@ -41,5 +41,33 @@ for (const file of filesToCopy) {
   fs.writeFileSync(dest, content, 'utf8');
 }
 
-console.log(`\n✨ Successfully created new p5.js sketch in: p5js/${folderName}/`);
-console.log(`To start developing, run:\n  npm run dev\nand open http://localhost:5173/p5js/${folderName}/\n`);
+// Create dedicated README.md for the new sketch
+const readmeContent = `# ${sketchTitle}
+
+Creative coding sketch created with **p5.js**.
+
+---
+
+## 📂 Contenu du dossier
+
+| Fichier | Description |
+| :--- | :--- |
+| **\`sketch.js\`** | Code source du sketch en **p5.js**. |
+| **\`index.html\`** | Page de prévisualisation web. |
+| **\`style.css\`** | Feuilles de styles. |
+
+---
+
+## 🚀 Utilisation
+
+Lancez le serveur de développement web :
+\`\`\`bash
+npm run dev
+\`\`\`
+Puis ouvrez [\`http://localhost:5173/${folderName}/\`](http://localhost:5173/${folderName}/).
+`;
+
+fs.writeFileSync(path.join(targetDir, 'README.md'), readmeContent, 'utf8');
+
+console.log(`\n✨ Successfully created new project directory in: /${folderName}/`);
+console.log(`To start developing, run:\n  npm run dev\nand open http://localhost:5173/${folderName}/\n`);
