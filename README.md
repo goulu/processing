@@ -1,44 +1,25 @@
 # Processing & p5.js Creative Coding
 
-Ce dépôt regroupe des sketches d'art génératif, de simulations physiques et d'algorithmes visuels développés en **[Processing](https://processing.org/) (Java)** et en **[p5.js](https://p5js.org/) (JavaScript)**.
+Ce dépôt regroupe des sketches d'art génératif, de simulations physiques et d'algorithmes visuels développés en **[Processing](https://processing.org/) (Java)** et en **[p5.js](https://p5js.org/) (JavaScript)** par **Philippe Guglielmetti ([Dr. Goulu](https://www.goulu.net/))**.
 
-Chaque script dispose de son propre dossier regroupant son code source Processing, son implémentation p5.js (le cas échéant) et sa documentation dédiée.
+Chaque projet dispose de son propre dossier autonome regroupant son code source Processing (Java), son portage interactif p5.js (Web) et sa documentation dédiée.
 
 ---
 
-## 📁 Structure du projet
+## 📁 Projets disponibles
 
-```text
-├── Galaxy/                   # Processing (Java) : Simulation de galaxie spirale
-│   ├── Galaxy.pde
-│   ├── flares.jpg
-│   └── README.md
-├── NBody/                    # Processing (Java) : Dynamique gravitationnelle N-corps
-│   ├── NBody.pde
-│   ├── system.xml
-│   └── README.md
-├── random-tiling/            # Processing + p5.js : Pavage aléatoire géométrique
-│   ├── RandomTiling.pde      # Code Processing Java
-│   ├── index.html            # Interface web p5.js
-│   ├── sketch.js             # Code p5.js
-│   ├── style.css             # Styles du sketch
-│   └── README.md             # Documentation et principes mathématiques
-├── sitemap/                  # Processing (Java) : Visualisation cartographique de sitemap
-│   ├── sitemap.pde
-│   └── README.md
-├── templates/
-│   └── p5-sketch/            # Modèle prêt à l'emploi pour nouveau sketch p5.js
-├── scripts/
-│   └── new-p5-sketch.js      # Générateur CLI pour nouveau projet p5.js
-├── index.html                # Galerie / hub web de prévisualisation
-└── package.json              # Outillage Node.js / Vite / p5
-```
+| Projet | Processing (Java) | p5.js (Web) | Description |
+| :--- | :---: | :---: | :--- |
+| **[`galaxy/`](file:///home/goulu/Documents/develop/processing/galaxy)** | `Galaxy.pde` | `sketch.js` | Simulation de galaxie spirale à rotation différentielle et torsion. |
+| **[`nbody/`](file:///home/goulu/Documents/develop/processing/nbody)** | `NBody.pde` | `sketch.js` | Dynamique gravitationnelle du Système Solaire (`system.xml`) et orbites. |
+| **[`random-tiling/`](file:///home/goulu/Documents/develop/processing/random-tiling)** | `RandomTiling.pde` | `sketch.js` | Pavage planaire aléatoire distribué selon Riemann-Zeta. |
+| **[`sitemap/`](file:///home/goulu/Documents/develop/processing/sitemap)** | `sitemap.pde` | `sketch.js` | Graphe orienté par forces physiques (ressorts et répulsion). |
 
 ---
 
 ## 🚀 Démarrage rapide
 
-### 1. Développement Web avec p5.js
+### 1. Version Web (p5.js)
 
 Prérequis : [Node.js](https://nodejs.org/) (v18+)
 
@@ -46,18 +27,20 @@ Prérequis : [Node.js](https://nodejs.org/) (v18+)
 # Installer les dépendances
 npm install
 
-# Lancer le serveur de développement (Hub & sketches)
+# Lancer le serveur de développement (Hub et sketches)
 npm run dev
 
 # Créer un nouveau projet p5.js autonome avec son README
 npm run new:p5 mon-nouveau-sketch
 ```
 
-### 2. Exécution des sketches Processing (Java)
+Accédez au Hub à l'adresse [`http://localhost:5173/`](http://localhost:5173/) ou directement à un sketch (ex : [`http://localhost:5173/galaxy/`](http://localhost:5173/galaxy/)).
 
-1. Téléchargez et installez l'IDE [Processing](https://processing.org/download).
-2. Ouvrez le fichier `.pde` correspondant dans l'IDE (ex: `Galaxy/Galaxy.pde`, `random-tiling/RandomTiling.pde`).
-3. Cliquez sur **Exécuter** (`Ctrl+R` ou `Cmd+R`).
+### 2. Version Processing (Java)
+
+1. Téléchargez l'IDE [Processing](https://processing.org/download).
+2. Ouvrez le fichier `.pde` correspondant (ex: `galaxy/Galaxy.pde`, `nbody/NBody.pde`, etc.).
+3. Exécutez avec `Ctrl+R` / `Cmd+R`.
 
 ---
 

@@ -85,7 +85,7 @@
       .subtitle {
         color: var(--text-muted);
         font-size: 1.15rem;
-        max-width: 620px;
+        max-width: 650px;
         margin: 0 auto;
       }
 
@@ -100,12 +100,17 @@
         border-bottom: 1px solid var(--border);
       }
 
+      .tags {
+        display: flex;
+        gap: 0.35rem;
+      }
+
       .tag {
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         text-transform: uppercase;
         font-weight: 700;
-        letter-spacing: 0.05em;
-        padding: 0.2rem 0.6rem;
+        letter-spacing: 0.04em;
+        padding: 0.2rem 0.55rem;
         border-radius: 4px;
       }
 
@@ -156,7 +161,7 @@
       }
 
       .card-title {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
         font-weight: 600;
         color: #ffffff;
       }
@@ -178,7 +183,7 @@
         display: inline-flex;
         align-items: center;
         gap: 0.4rem;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 1.1rem;
         border-radius: 8px;
         font-size: 0.85rem;
         font-weight: 500;
@@ -193,17 +198,6 @@
 
       .btn-primary:hover {
         background: #7dd3fc;
-      }
-
-      .btn-secondary {
-        background: rgba(255, 255, 255, 0.05);
-        color: var(--text-muted);
-        border: 1px solid var(--border);
-      }
-
-      .btn-secondary:hover {
-        color: #ffffff;
-        background: rgba(255, 255, 255, 0.1);
       }
 
       .cli-box {
@@ -245,105 +239,95 @@
           <span class="dot"></span>
           Creative Coding Workspace
         </div>
-        <h1>Processing & p5.js Sketches</h1>
+        <h1>Processing & p5.js Hub</h1>
         <p class="subtitle">
-          Collection de projets génératifs, simulations physiques et algorithmes visuels par Philippe Guglielmetti (Dr. Goulu).
+          Collection d'art génératif, de simulations physiques et d'algorithmes visuels par Philippe Guglielmetti (Dr. Goulu).
         </p>
       </header>
 
-      <!-- Section p5.js -->
+      <!-- Section Interactive Sketches -->
       <section>
         <div class="section-title">
-          <span class="tag p5">p5.js</span>
-          <span>Web Interactive Sketches</span>
+          <span>🎨 Projets & Sketches Interactifs</span>
         </div>
         <div class="grid">
-          <div class="card">
-            <div>
-              <div class="card-header">
-                <h3 class="card-title">Random Tiling</h3>
-                <span class="tag p5">p5.js</span>
-              </div>
-              <p class="card-desc">
-                Pavage aléatoire non-recouvrant basé sur la distribution de Riemann-Zeta avec support interactif pour cercles, étoiles, triangles, carrés, pentagones et hexagones.
-              </p>
-            </div>
-            <div class="card-footer">
-              <span style="font-size: 0.8rem; color: var(--text-muted);">Interactif</span>
-              <a href="/random-tiling/" class="btn btn-primary">Lancer le sketch →</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section Processing Java -->
-      <section>
-        <div class="section-title">
-          <span class="tag processing">Processing</span>
-          <span>Java Sketches (.pde)</span>
-        </div>
-        <div class="grid">
+          <!-- Galaxy -->
           <div class="card">
             <div>
               <div class="card-header">
                 <h3 class="card-title">Galaxy</h3>
-                <span class="tag processing">Java</span>
+                <div class="tags">
+                  <span class="tag processing">Java</span>
+                  <span class="tag p5">p5.js</span>
+                </div>
               </div>
               <p class="card-desc">
-                Simulation et rendu réaliste de galaxie spirale avec rotation stellaire, poussières et flares lumineux.
+                Simulation spirale en rotation différentielle avec distorsion elliptique, poussières stellaires et halo cosmique.
               </p>
             </div>
             <div class="card-footer">
-              <span style="font-size: 0.8rem; color: var(--text-muted);">Galaxy/Galaxy.pde</span>
-              <span class="btn btn-secondary">Processing IDE</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">galaxy/</span>
+              <a href="/galaxy/" class="btn btn-primary">Lancer le sketch →</a>
             </div>
           </div>
 
+          <!-- NBody -->
           <div class="card">
             <div>
               <div class="card-header">
                 <h3 class="card-title">N-Body</h3>
-                <span class="tag processing">Java</span>
+                <div class="tags">
+                  <span class="tag processing">Java</span>
+                  <span class="tag p5">p5.js</span>
+                </div>
               </div>
               <p class="card-desc">
-                Simulateur de dynamique gravitationnelle à N-corps avec chargement de configuration de système en XML.
+                Dynamique gravitationnelle du Système Solaire (Soleil, planètes, lunes et sondes Pioneer) chargée depuis <code>system.xml</code> avec tracé d'orbites.
               </p>
             </div>
             <div class="card-footer">
-              <span style="font-size: 0.8rem; color: var(--text-muted);">NBody/NBody.pde</span>
-              <span class="btn btn-secondary">Processing IDE</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">nbody/</span>
+              <a href="/nbody/" class="btn btn-primary">Lancer le sketch →</a>
             </div>
           </div>
 
+          <!-- Random Tiling -->
           <div class="card">
             <div>
               <div class="card-header">
                 <h3 class="card-title">Random Tiling</h3>
-                <span class="tag processing">Java</span>
+                <div class="tags">
+                  <span class="tag processing">Java</span>
+                  <span class="tag p5">p5.js</span>
+                </div>
               </div>
               <p class="card-desc">
-                Version originale Processing Java de l'algorithme de pavage aléatoire géométrique.
+                Pavage aléatoire non-recouvrant basé sur la distribution de Riemann-Zeta pour cercles, étoiles, triangles, carrés, pentagones et hexagones.
               </p>
             </div>
             <div class="card-footer">
-              <span style="font-size: 0.8rem; color: var(--text-muted);">random tiling/RandomTiling.pde</span>
-              <span class="btn btn-secondary">Processing IDE</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">random-tiling/</span>
+              <a href="/random-tiling/" class="btn btn-primary">Lancer le sketch →</a>
             </div>
           </div>
 
+          <!-- Sitemap -->
           <div class="card">
             <div>
               <div class="card-header">
                 <h3 class="card-title">Sitemap</h3>
-                <span class="tag processing">Java</span>
+                <div class="tags">
+                  <span class="tag processing">Java</span>
+                  <span class="tag p5">p5.js</span>
+                </div>
               </div>
               <p class="card-desc">
-                Visualisation arborescente et cartographie de sitemap web.
+                Visualisation de graphe orienté par forces physiques (ressorts élastiques & répulsion coulombienne) avec caméra adaptative automatique.
               </p>
             </div>
             <div class="card-footer">
-              <span style="font-size: 0.8rem; color: var(--text-muted);">sitemap/sitemap.pde</span>
-              <span class="btn btn-secondary">Processing IDE</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">sitemap/</span>
+              <a href="/sitemap/" class="btn btn-primary">Lancer le sketch →</a>
             </div>
           </div>
         </div>
@@ -355,7 +339,7 @@
           <span>⚡ Commandes rapides</span>
         </div>
         <div class="cli-box">
-          <span>Créer un nouveau sketch p5.js :</span>
+          <span>Créer un nouveau projet p5.js :</span>
           <span class="code-snippet">npm run new:p5 &lt;nom-du-sketch&gt;</span>
         </div>
         <div class="cli-box">
