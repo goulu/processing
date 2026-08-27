@@ -2,18 +2,18 @@
 
 Ce dépôt regroupe des sketches d'art génératif, de simulations physiques et d'algorithmes visuels développés en **[Processing](https://processing.org/) (Java)** et en **[p5.js](https://p5js.org/) (JavaScript)** par **Philippe Guglielmetti ([Dr. Goulu](https://www.goulu.net/))**.
 
-Chaque projet dispose de son propre dossier autonome regroupant son code source Processing (Java), son portage interactif p5.js (Web) et sa documentation dédiée.
+Tous les sketches sont regroupés dans le dossier **[`src/`](file:///home/goulu/Documents/develop/processing/src)**. Chaque projet dispose de son propre dossier autonome regroupant son code source Processing (Java), son portage interactif p5.js (Web) et sa documentation dédiée.
 
 ---
 
-## 📁 Projets disponibles
+## 📁 Projets disponibles (`src/`)
 
 | Projet | Processing (Java) | p5.js (Web) | Description |
 | :--- | :---: | :---: | :--- |
-| **[`galaxy/`](file:///home/goulu/Documents/develop/processing/galaxy)** | `Galaxy.pde` | `sketch.js` | Simulation de galaxie spirale à rotation différentielle et torsion. |
-| **[`nbody/`](file:///home/goulu/Documents/develop/processing/nbody)** | `NBody.pde` | `sketch.js` | Dynamique gravitationnelle du Système Solaire (`system.xml`) et orbites. |
-| **[`random-tiling/`](file:///home/goulu/Documents/develop/processing/random-tiling)** | `RandomTiling.pde` | `sketch.js` | Pavage planaire aléatoire distribué selon Riemann-Zeta. |
-| **[`sitemap/`](file:///home/goulu/Documents/develop/processing/sitemap)** | `sitemap.pde` | `sketch.js` | Graphe orienté par forces physiques (ressorts et répulsion). |
+| **[`src/galaxy/`](file:///home/goulu/Documents/develop/processing/src/galaxy)** | `Galaxy.pde` | `sketch.js` | Simulation de galaxie spirale à rotation différentielle et torsion. |
+| **[`src/nbody/`](file:///home/goulu/Documents/develop/processing/src/nbody)** | `NBody.pde` | `sketch.js` | Dynamique gravitationnelle du Système Solaire (`system.xml`) et orbites. |
+| **[`src/random-tiling/`](file:///home/goulu/Documents/develop/processing/src/random-tiling)** | `RandomTiling.pde` | `sketch.js` | Pavage planaire aléatoire distribué selon Riemann-Zeta. |
+| **[`src/sitemap/`](file:///home/goulu/Documents/develop/processing/src/sitemap)** | `sitemap.pde` | `sketch.js` | Graphe orienté par forces physiques (ressorts et répulsion). |
 
 ---
 
@@ -30,16 +30,16 @@ npm install
 # Lancer le serveur de développement (Hub et sketches)
 npm run dev
 
-# Créer un nouveau projet p5.js autonome avec son README
+# Créer un nouveau projet p5.js autonome dans src/
 npm run new:p5 mon-nouveau-sketch
 ```
 
-Accédez au Hub à l'adresse [`http://localhost:5173/`](http://localhost:5173/) ou directement à un sketch (ex : [`http://localhost:5173/galaxy/`](http://localhost:5173/galaxy/)).
+Accédez au Hub à l'adresse [`http://localhost:5173/`](http://localhost:5173/) ou directement à un sketch (ex : [`http://localhost:5173/src/galaxy/`](http://localhost:5173/src/galaxy/)).
 
 ### 2. Version Processing (Java)
 
 1. Téléchargez l'IDE [Processing](https://processing.org/download).
-2. Ouvrez le fichier `.pde` correspondant (ex: `galaxy/Galaxy.pde`, `nbody/NBody.pde`, etc.).
+2. Ouvrez le fichier `.pde` correspondant (ex: `src/galaxy/Galaxy.pde`, `src/nbody/NBody.pde`, etc.).
 3. Exécutez avec `Ctrl+R` / `Cmd+R`.
 
 ---

@@ -42,7 +42,7 @@ Lancez le serveur web local à la racine :
 ```bash
 npm run dev
 ```
-Puis ouvrez [`http://localhost:5173/random-tiling/`](http://localhost:5173/random-tiling/).
+Puis ouvrez [`http://localhost:5173/src/random-tiling/`](http://localhost:5173/src/random-tiling/).
 
 **Contrôles clavier / boutons :**
 - `0` : Cercles

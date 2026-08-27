@@ -24,7 +24,7 @@ Lancez le serveur web local :
 ```bash
 npm run dev
 ```
-Puis ouvrez [`http://localhost:5173/sitemap/`](http://localhost:5173/sitemap/).
+Puis ouvrez [`http://localhost:5173/src/sitemap/`](http://localhost:5173/src/sitemap/).
 
 **Fonctionnalités interactives :**
 - `Exemples de sites` : Préconfigurations (drgoulu.com blog, processing.org/p5js.org, arborescence hiérarchique).

@@ -21,7 +21,7 @@ const sketchTitle = sketchName
   .replace(/[-_]/g, ' ')
   .replace(/\b\w/g, (c) => c.toUpperCase());
 
-const targetDir = path.join(rootDir, folderName);
+const targetDir = path.join(rootDir, 'src', folderName);
 const templateDir = path.join(rootDir, 'templates', 'p5-sketch');
 
 if (fs.existsSync(targetDir)) {
@@ -64,10 +64,10 @@ Lancez le serveur de développement web :
 \`\`\`bash
 npm run dev
 \`\`\`
-Puis ouvrez [\`http://localhost:5173/${folderName}/\`](http://localhost:5173/${folderName}/).
+Puis ouvrez [\`http://localhost:5173/src/${folderName}/\`](http://localhost:5173/src/${folderName}/).
 `;
 
 fs.writeFileSync(path.join(targetDir, 'README.md'), readmeContent, 'utf8');
 
-console.log(`\n✨ Successfully created new project directory in: /${folderName}/`);
-console.log(`To start developing, run:\n  npm run dev\nand open http://localhost:5173/${folderName}/\n`);
+console.log(`\n✨ Successfully created new project directory in: /src/${folderName}/`);
+console.log(`To start developing, run:\n  npm run dev\nand open http://localhost:5173/src/${folderName}/\n`);
